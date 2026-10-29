@@ -2,11 +2,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Audio library access for Android 13 and newer -->
     <uses-permission
         android:name="android.permission.READ_MEDIA_AUDIO" />
 
-    <!-- Audio library access for Android 12 and older -->
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
@@ -30,4 +28,5 @@
         </activity>
 
     </application>
+
 </manifest>
