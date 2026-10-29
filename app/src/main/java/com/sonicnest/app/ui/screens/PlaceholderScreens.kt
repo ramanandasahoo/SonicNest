@@ -1,3 +1,4 @@
+
 package com.sonicnest.app.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
@@ -29,7 +30,11 @@ fun LibraryScreen() {
             .padding(horizontal = 20.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        ScreenHeader("Library", "Placeholder sections. No songs are scanned yet.")
+        ScreenHeader(
+            "Library",
+            "Placeholder sections. No songs are scanned yet."
+        )
+
         FeatureRow("All songs", "Every audio file on your phone", 3)
         FeatureRow("Albums", "Grouped by album", 3)
         FeatureRow("Artists", "Grouped by artist", 3)
@@ -43,6 +48,7 @@ fun LibraryScreen() {
 @Composable
 fun PlaylistsScreen() {
     val notice = LocalNotice.current
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -50,8 +56,14 @@ fun PlaylistsScreen() {
             .padding(horizontal = 20.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        ScreenHeader("Playlists", "Placeholder. Playlists are saved in Phase 6.")
-        SkeuoPanel(modifier = Modifier.fillMaxWidth()) {
+        ScreenHeader(
+            "Playlists",
+            "Placeholder. Playlists are saved in Phase 6."
+        )
+
+        SkeuoPanel(
+            modifier = Modifier.fillMaxWidth()
+        ) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -60,16 +72,23 @@ fun PlaylistsScreen() {
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 Text(
-                    "No playlists yet",
+                    text = "No playlists yet",
                     color = SonicColors.TextPrimary,
                     style = MaterialTheme.typography.titleMedium
                 )
+
                 Text(
-                    "Create, rename and delete playlists here.",
+                    text = "Create, rename and delete playlists here.",
                     color = SonicColors.TextSecondary,
                     style = MaterialTheme.typography.bodyMedium
                 )
-                PillButton("Create playlist") { notice("Playlists arrive in Phase 6.") }
+
+                PillButton(
+                    text = "Create playlist",
+                    onClick = {
+                        notice("Playlists arrive in Phase 6.")
+                    }
+                )
             }
         }
     }
