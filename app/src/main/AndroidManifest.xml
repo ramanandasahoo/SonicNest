@@ -1,8 +1,15 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- No permissions yet. Audio and notification permissions are added
-         in later phases, each with an explanation. No INTERNET permission. -->
+    <!-- Audio library access for Android 13 and newer -->
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <!-- Audio library access for Android 12 and older -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
 
     <application
         android:allowBackup="false"
@@ -14,10 +21,12 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
     </application>
